@@ -81,11 +81,11 @@ router.post('/addarticle', (req, res) => {
       return res.status(200).json({ 'msg': 'updata false', 'code': '503' })
     } else {
       let p = path.replace("\\","/");
-      let s = "INSERT INTO article (src, name,tag,url,author) VALUES ('" + p + '/' + body.src.name + "','" + body.name + "','" + body.tag + "','" + p + '/' + body.name + "','001')"
-      console.log(s)
+      let s = "INSERT INTO article (src, name,tag,url,author) VALUES ('" + 'http：//120.26.42.7:3000/'+ body.name+'/'+ body.src.name + "','" + body.name + "','" + body.tag + "','" + p + '/' + body.name + "','001')"
+      console.log(s)      
       sql(s, (err, r, f) => {
         if (err) {
-          return res.status(200).json({ 'msg': 'Server Error...', 'code': '504' })
+         return re.status(200).json({ 'msg': 'Server Error...', 'code': '504' })
         }
         return res.status(200).json({ 'msg': '成功', 'code': '0' })
       })
